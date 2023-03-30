@@ -1,0 +1,7 @@
+venv/
+.idea/
+* .pyc
+.vscode/
+notes_uai_lesson_17_Sqlite
+notes_uai_lesson_17_Sqlite~
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Создание записи БД
+{% endblock %}
+
+{% block body %}
+    <p><h1> Добавление записи в Базу Данных в ручную</h1></p>
+    <form method="post" class="form-post">
+        <input type="text" name="name" id="name" placeholder="Впиши Название шампуня">
+        <textarea name="description" id="description" cols="30" rows="10"placeholder="Впиши Описание"></textarea>
+        <input type="text" name="price" id="price" placeholder="Впиши стоимость товара">
+        <input type="date" name="created" id="created">
+        <input type="submit" id="btn" value="Отправить">
+    </form>
+{% endblock body %}
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Подкл Bootstrap -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <!-- Подключение моих стилей -->
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/main.css") }}">
+    
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>    
+</head>
+
+<body>
+    <header>
+        <div class="wrap-logo">
+            <!-- <a class="logo" href="http://127.0.0.1:5000/">Flask & db</a> -->
+            <a id="btn-logo-one"  href="http://127.0.0.1:5000/">⚙️ БД Без сортировки</a>
+            <a id="btn-logo-one" href="http://127.0.0.1:5000/sort_by_id">⚙️ Cортировка по ID</a>
+            <a id="btn-logo-one" href="http://127.0.0.1:5000/sort_by_price">⚙️ Сортировка по Цене</a>
+            <a id="btn-logo-one" href="http://127.0.0.1:5000/sort_by_name">⚙️ Сортировка по Имени</a>
+        </div>
+
+        <nav>
+            <a href="http://127.0.0.1:5000/">Данные АААА  ЭЭЭТО???</a>
+            <a href="http://127.0.0.1:5000/create">♻️ Создать</a>
+            <a href="http://127.0.0.1:5000/json_read">♻️ Обновить БД</a>
+        </nav>
+        
+    </header>
+
+    <!-- Боковая панель -->
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="amdaven"></i>
+        <i class="fas fa-times" id="lodesan"></i>
+    </label>
+    <div class="navega_sunka">
+        <header>Helper</header>       
+        
+        <a href="#" class="gesopamda">
+            <i class="fas fa-home"></i>
+            <span>Home Page</span>
+        </a>
+
+        <a href="delete_database" class="gesopamda">
+            <i class="fas fa-bug"></i>
+            <span>Delete data</span>
+        </a>
+
+        <a href="http://127.0.0.1:5000/sort_by_id">
+            <i class="fas fa-bell"></i>
+            <span>Sort id </span>
+        </a>
+
+        <a href="http://127.0.0.1:5000/sort_by_price">
+            <i class="fas fa-binoculars"></i>
+            <span>Sort price</span>
+        </a>
+
+        <a href="http://127.0.0.1:5000/sort_by_name">
+            <i class="fas fa-book"></i>
+            <span>Sort name</span>
+        </a>
+
+        <a href="http://127.0.0.1:5000/sort_by_date">
+            <i class="far fa-bookmark"></i>
+            <span>Sort date</span>
+        </a>
+    </div>
+
+    {% block body %}       
+    {% endblock %}
+
+    <!-- <footer class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="p-3 text-bg-dark">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 HeyArtem, Inc</span>
+        </div>
+        </footer> -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Создание записи БД
+{% endblock %}
+
+{% block body %}   
+<p><h1> Текущая информация в Базе Данных</h1></p>  
+    {% for s in list %}
+        <div class="block_by_card">
+            <p>id: {{s.id}}</p>
+            <p>name: {{s.name}}</p>        
+            <p>description: {{s.description}}</p>
+            <p>price: {{s.price}}</p>        
+            <p>date: {{s.created}}</p>                
+            <br>                
+        </div>
+    {% endfor %}    
+{% endblock body %}
+    
+
+</html>
