@@ -5,6 +5,7 @@ import json
 import csv
 import random
 import time
+from datetime import datetime
 
 
 """
@@ -100,6 +101,8 @@ def get_data():
             except Exception as ex:
                 print(ex)
                 link_to_card = "No data"
+            
+            current_data = datetime.now().strftime("%Y-%m-%d")
 
             # print(f"\n card_name: {card_name}\n card_description: {card_description}\n card_price: {card_price}\n link_to_card: {link_to_card}\n")
 
@@ -109,7 +112,8 @@ def get_data():
                 "card_name": card_name,
                 "card_description": card_description,
                 "card_price": card_price,
-                "link_to_card": link_to_card
+                "link_to_card": link_to_card,
+                "current_data": current_data
                 }
             )
 
@@ -148,7 +152,7 @@ def get_data():
 
     print("\n[INFO] Data collection and recording completed!")
     
-    return "Hello Python!"
+    return all_data_json
 
 
 def main():

@@ -5,6 +5,7 @@ import sqlite3
 from datetime import datetime
 import sqlite3
 import json
+from profcosmetics import get_data
 
 
 # Создал приложение
@@ -132,8 +133,8 @@ def json_read():
         with open("data/all_data.json", encoding="utf8") as f:            
             data = json.load(f)
 
-        # В переменную сохраняю текущую дату
-        now = datetime.now()        
+        # # В переменную сохраняю текущую дату
+        # now = datetime.now()        
         
         # Записываю в БД, сохраненные из json данные
         for item in data:
@@ -142,7 +143,8 @@ def json_read():
                 item["card_name"],
                 item["card_description"],
                 item["card_price"],
-                now.strftime("%Y-%m-%d")
+                item["current_data"]
+                # now.strftime("%Y-%m-%d")
                 )
             )
         
@@ -153,7 +155,7 @@ def json_read():
 
     # Закрываю БД Обязательно!, перенаправляю на главную страниницу
     finally:
-        print(f"data: {data}")
+        # print(f"data: {data}")
         connection.close()
         return redirect("/")
 
@@ -196,7 +198,21 @@ def sort_id_dg():
     info = Shampoo.query.filter(Shampoo.id > 50).all()
     
     return render_template("shampoo.html", list=info)
+
+
+# Страница с запуском парсера
+@app.route("/new_json")
+def new_json():    
+    return render_template("new_json.html")
+
+
+# Запуск парсера cайта www.proficosmetics.ru
+@app.route("/start_parsing")
+def start_parsing():
+    x = get_data()
+    return render_template("parsing_result.html", info=x)
     
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parsing_result</title>
+</head>
+<body>
+    <p><h1>Спарсенная информация (новый json):</h1></p>
+
+    {% for item in info %}
+        <div>
+            <p>Наименование: {{item.card_name}}</p>
+            <p>Описание: {{item.card_description}}</p>
+            <p>Стоимость: {{item.card_price}} руб.</p>
+            <p>Дата: {{item.current_data}}</p>
+            <hr>
+            <br>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,53 @@
+notes_uai_lesson_17_Sqlite
+
+$ pip install -U pip setuptools Flask
+$ pip install Flask-SQLAlchemy
+$ pip install Flask-Migrate
+
+$ pip install bs4 requests lxml
+
+$ touch app.py
+
+ Это прописываю в консоли после описания таблицы
+ $ python
+  
+ from app import app, db
+ app.app_context().push()
+ db.create_all()
+ 
+ ctr + D выход
+ 
+ 
+ 
+QUESTIONS:
+
+-        def create(): - принимаем данные от пользователя, разве не нужно делать finally:
+        
+-Метод __repr__: name: Shampoo.name 
+description: Shampoo.description
+ работает непонятно
+ 
+
+-Почему в
+        # Ввод данных в БД от пользователя
+        @app.route("/create", methods=["POST", "GET"])
+        def create():
+        
+        мы не создаем курсор?
+        почему не закрываем?
+        
+        
+-Почему не срабатывает /json_read
+
+
+-Может при парсинге, вписать дату, что бы в БД было видно от какого числа данные??
+
+-стили не везде понимаю, где к чему, как смотреть
+        например wrap-logo 2 шт.
+        
+-"Текущая информация в Базе Данных" сдвинуть вправо
+-где классы боковой панели?
+- как подключается левая панель?
+-например я хочу уменьшить ширину шапки? уменьшить расстояние м/у надписями
+-если что, код в телеге
+        
