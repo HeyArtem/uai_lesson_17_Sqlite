@@ -1,6 +1,6 @@
 # Веб-сайт на Flask & sqlite3 & scraping. <br/>Home work for UAI, lesson 17.
 
-![alt-текст](https://github.com/HeyArtem/scraping_proficosmetics/blob/main/picture/baner.png "Baner")
+![alt-текст](https://github.com/HeyArtem/uai_lesson_17_Sqlite/blob/main/pictures/banner.png "Baner")
 
 ## Тех.детали:
 * _Flask_
