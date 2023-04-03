@@ -1,0 +1,20 @@
+notes_uai_lesson_17_Sqlite
+
+$ pip install -U pip setuptools Flask
+$ pip install Flask-SQLAlchemy
+$ pip install Flask-Migrate
+
+$ pip install bs4 requests lxml
+
+$ touch app.py
+
+ Это прописываю в консоли после описания таблицы
+ $ python
+  
+ from app import app, db
+ app.app_context().push()
+ db.create_all()
+ 
+ ctr + D выход
+       
+        
